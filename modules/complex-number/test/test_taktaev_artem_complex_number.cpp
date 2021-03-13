@@ -15,12 +15,15 @@ TEST(Taktaev_Artem_ComplexNumberTest, dividing_throws) {
 }
 
 TEST(Taktaev_Artem_ComplexNumberTest, dividing_and_mult_work_in_pair) {
-    ComplexNumber c1(1.2, -2.3);
+    double re1 = 1.2;
+    double im1 = -2.3;
+
+    ComplexNumber c1(re1, im1);
     ComplexNumber c2(-0.6, 1.9);
     ComplexNumber c3 = c1 * c2 / c2;
 
-    EXPECT_DOUBLE_EQ(c1.getRe(), c3.getRe());
-    EXPECT_DOUBLE_EQ(c1.getIm(), c3.getIm());
+    EXPECT_DOUBLE_EQ(re1, c3.getRe());
+    EXPECT_DOUBLE_EQ(im1, c3.getIm());
 }
 
 TEST(Taktaev_Artem_ComplexNumberTest, both_constructors_creates_same_objects) {
