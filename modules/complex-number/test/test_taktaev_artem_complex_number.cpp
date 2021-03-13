@@ -14,30 +14,16 @@ TEST(Taktaev_Artem_ComplexNumberTest, dividing_throws) {
     ASSERT_ANY_THROW(c / c_zero);
 }
 
-TEST(Taktaev_Artem_ComplexNumberTest, set_and_get_works) {
-    double re = 1.0;
-    double im = -2.0;
+TEST(Taktaev_Artem_ComplexNumberTest, dividing_and_mult_work_in_pair) {
+    ComplexNumber c1(1.2, -2.3);
+    ComplexNumber c2(-0.6, 1.9);
+    ComplexNumber c3 = c1 * c2 / c2;
 
-    ComplexNumber c;
-    c.setRe(re);
-    c.setIm(im);
-
-    EXPECT_EQ(c.getRe(), re);
-    EXPECT_EQ(c.getIm(), im);
+    EXPECT_DOUBLE_EQ(c1.getRe(), c3.getRe());
+    EXPECT_DOUBLE_EQ(c1.getIm(), c3.getIm());
 }
 
-TEST(Taktaev_Artem_ComplexNumberTest, copy_constructor_works) {
-    double re = 2.0;
-    double im = -1.0;
-
-    ComplexNumber c(re, im);
-    ComplexNumber c_copy(c);
-
-    EXPECT_EQ(c_copy.getRe(), re);
-    EXPECT_EQ(c_copy.getIm(), im);
-}
-
-TEST(Taktaev_Artem_ComplexNumberTest, masterpiece_test) {
+TEST(Taktaev_Artem_ComplexNumberTest, both_constructors_creates_same_objects) {
     double re = -2.0;
     double im = 1.0;
 
