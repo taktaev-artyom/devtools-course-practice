@@ -2,6 +2,8 @@
 
 #include "include/qsort.h"
 
+#include <vector>
+#include <algorithm>
 #include <random>
 
 std::vector<double> QSort::createRandomVector(int vec_size) {
