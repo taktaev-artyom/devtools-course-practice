@@ -7,7 +7,7 @@
 
 namespace QSort {
     std::vector<double> createRandomVector(int vec_size);
-    void sort(std::vector<double> *arr, int left, int right);
+    void Sort(std::vector<double> *arr, int left, int right);
 }
 
 #endif  // MODULES_QSORT_INCLUDE_QSORT_H_

@@ -19,7 +19,7 @@ std::vector<double> QSort::createRandomVector(int vec_size) {
     return res_vec;
 }
 
-void QSort::sort(std::vector<double> *arr, int left, int right) {
+void QSort::Sort(std::vector<double> *arr, int left, int right) {
     if (left >= right) throw "Left idx must be >= that right one.";
 
     int pidx = (left + right) / 2;
@@ -36,6 +36,6 @@ void QSort::sort(std::vector<double> *arr, int left, int right) {
         }
     } while (i <= j);
 
-    if (j > left) QSort::sort(arr, left, j);
-    if (i < right) QSort::sort(arr, i, right);
+    if (j > left) QSort::Sort(arr, left, j);
+    if (i < right) QSort::Sort(arr, i, right);
 }

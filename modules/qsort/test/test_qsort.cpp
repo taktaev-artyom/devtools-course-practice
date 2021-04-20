@@ -13,13 +13,13 @@ TEST(QSort_Test, Test_Creating_Vector_Exception) {
 TEST(QSort_Test, Test_Out_Of_Bounds_Exception) {
     int n = 11;
     std::vector<double> vec = QSort::createRandomVector(n);
-    ASSERT_ANY_THROW(QSort::sort(&vec, -1, n));
+    ASSERT_ANY_THROW(QSort::Sort(&vec, -1, n));
 }
 
 TEST(QSort_Test, Test_Index_Overlap_Exception) {
     int n = 10;
     std::vector<double> vec = QSort::createRandomVector(n);
-    ASSERT_ANY_THROW(QSort::sort(&vec, n - 1, 0));
+    ASSERT_ANY_THROW(QSort::Sort(&vec, n - 1, 0));
 }
 
 TEST(QSort_Test, Test_Correct_Creating_Vector) {
@@ -32,7 +32,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Rand_Even_Size_Vec) {
     int n = 10;
     std::vector<double> vec = QSort::createRandomVector(n);
     std::vector<double> vec_copy = vec;
-    QSort::sort(&vec, 0, n - 1);
+    QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
@@ -41,7 +41,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Rand_Odd_Vec) {
     int n = 11;
     std::vector<double> vec = QSort::createRandomVector(n);
     std::vector<double> vec_copy = vec;
-    QSort::sort(&vec, 0, n - 1);
+    QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
@@ -53,7 +53,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Sorted_Vec) {
         vec[i] = i;
     }
     std::vector<double> vec_copy = vec;
-    QSort::sort(&vec, 0, n - 1);
+    QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
@@ -65,7 +65,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Reverse_Sorted_Vec) {
         vec[i] = n - i;
     }
     std::vector<double> vec_copy = vec;
-    QSort::sort(&vec, 0, n - 1);
+    QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
@@ -77,7 +77,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Eq_Elements_Vec) {
         vec[i] = 1;
     }
     std::vector<double> vec_copy = vec;
-    QSort::sort(&vec, 0, n - 1);
+    QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
