@@ -7,8 +7,7 @@
 #include "include/qsort.h"
 
 TEST(QSort_Test, Test_Creating_Vector_Exception) {
-    int n = -1;
-    ASSERT_ANY_THROW(std::vector<double> vec = QSort::createRandomVector(n));
+    ASSERT_ANY_THROW(QSort::createRandomVector(-1));
 }
 
 TEST(QSort_Test, Test_Out_Of_Bounds_Exception) {
