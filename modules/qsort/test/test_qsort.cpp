@@ -34,7 +34,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Rand_Even_Size_Vec) {
     std::vector<double> vec_copy = vec;
     QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
-    ASSERT_EQ(vec, vec_copy);
+    ASSERT_EQ(vec_copy, vec);
 }
 
 TEST(QSort_Test, Test_Correct_Sorting_Rand_Odd_Vec) {
@@ -43,7 +43,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Rand_Odd_Vec) {
     std::vector<double> vec_copy = vec;
     QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
-    ASSERT_EQ(vec, vec_copy);
+    ASSERT_EQ(vec_copy, vec);
 }
 
 TEST(QSort_Test, Test_Correct_Sorting_Sorted_Vec) {
@@ -55,7 +55,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Sorted_Vec) {
     std::vector<double> vec_copy = vec;
     QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
-    ASSERT_EQ(vec, vec_copy);
+    ASSERT_EQ(vec_copy, vec);
 }
 
 TEST(QSort_Test, Test_Correct_Sorting_Reverse_Sorted_Vec) {
@@ -67,7 +67,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Reverse_Sorted_Vec) {
     std::vector<double> vec_copy = vec;
     QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
-    ASSERT_EQ(vec, vec_copy);
+    ASSERT_EQ(vec_copy, vec);
 }
 
 TEST(QSort_Test, Test_Correct_Sorting_Eq_Elements_Vec) {
@@ -79,5 +79,5 @@ TEST(QSort_Test, Test_Correct_Sorting_Eq_Elements_Vec) {
     std::vector<double> vec_copy = vec;
     QSort::Sort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
-    ASSERT_EQ(vec, vec_copy);
+    ASSERT_EQ(vec_copy, vec);
 }

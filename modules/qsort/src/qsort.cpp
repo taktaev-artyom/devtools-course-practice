@@ -20,7 +20,7 @@ std::vector<double> QSort::createRandomVector(int vec_size) {
 }
 
 void QSort::Sort(std::vector<double> *arr, int left, int right) {
-    if (left >= right) throw "Left idx must be >= that right one.";
+    if (left >= right) throw "Left idx must be < that right one.";
 
     int pidx = (left + right) / 2;
     double p = arr->at(pidx);
