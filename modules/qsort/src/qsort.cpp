@@ -4,7 +4,7 @@
 
 #include <random>
 
-std::vector<double> createRandomVector(int vec_size) {
+std::vector<double> QSort::createRandomVector(int vec_size) {
     if (vec_size <= 0) throw "Vector's size must be > 0.";
 
     std::random_device rand_d;
@@ -17,7 +17,7 @@ std::vector<double> createRandomVector(int vec_size) {
     return res_vec;
 }
 
-void qSort(std::vector<double> *arr, int left, int right) {
+void QSort::qSort(std::vector<double> *arr, int left, int right) {
     if (left >= right) throw "Left idx must be >= that right one.";
 
     int pidx = (left + right) / 2;
@@ -34,6 +34,6 @@ void qSort(std::vector<double> *arr, int left, int right) {
         }
     } while (i <= j);
 
-    if (j > left) qSort(arr, left, j);
-    if (i < right) qSort(arr, i, right);
+    if (j > left) QSort::qSort(arr, left, j);
+    if (i < right) QSort::qSort(arr, i, right);
 }

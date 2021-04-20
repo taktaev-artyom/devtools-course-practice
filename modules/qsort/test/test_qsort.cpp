@@ -9,23 +9,23 @@
 TEST(QSort_Test, Test_Correct_Creating_Vector) {
     int n = 10;
     std::vector<double> vec(n);
-    ASSERT_NO_THROW(vec = createRandomVector(n));
+    ASSERT_NO_THROW(vec = QSort::createRandomVector(n));
 }
 
 TEST(QSort_Test, Test_Correct_Sorting_Rand_Even_Size_Vec) {
     int n = 10;
-    std::vector<double> vec = createRandomVector(n);
+    std::vector<double> vec = QSort::createRandomVector(n);
     std::vector<double> vec_copy = vec;
-    qSort(&vec, 0, n - 1);
+    QSort::qSort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
 
 TEST(QSort_Test, Test_Correct_Sorting_Rand_Odd_Vec) {
     int n = 11;
-    std::vector<double> vec = createRandomVector(n);
+    std::vector<double> vec = QSort::createRandomVector(n);
     std::vector<double> vec_copy = vec;
-    qSort(&vec, 0, n - 1);
+    QSort::qSort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
@@ -37,7 +37,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Sorted_Vec) {
         vec[i] = i;
     }
     std::vector<double> vec_copy = vec;
-    qSort(&vec, 0, n - 1);
+    QSort::qSort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
@@ -49,7 +49,7 @@ TEST(QSort_Test, Test_Correct_Sorting_Reverse_Sorted_Vec) {
         vec[i] = n - i;
     }
     std::vector<double> vec_copy = vec;
-    qSort(&vec, 0, n - 1);
+    QSort::qSort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
@@ -61,24 +61,24 @@ TEST(QSort_Test, Test_Correct_Sorting_Eq_Elements_Vec) {
         vec[i] = 1;
     }
     std::vector<double> vec_copy = vec;
-    qSort(&vec, 0, n - 1);
+    QSort::qSort(&vec, 0, n - 1);
     std::sort(vec_copy.begin(), vec_copy.end());
     ASSERT_EQ(vec, vec_copy);
 }
 
 TEST(QSort_Test, Test_Creating_Vector_Exception) {
     int n = -1;
-    ASSERT_ANY_THROW(std::vector<double> vec = createRandomVector(n));
+    ASSERT_ANY_THROW(std::vector<double> vec = QSort::createRandomVector(n));
 }
 
 TEST(QSort_Test, Test_Out_Of_Bounds_Exception) {
     int n = 11;
-    std::vector<double> vec = createRandomVector(n);
-    ASSERT_ANY_THROW(qSort(&vec, -1, n));
+    std::vector<double> vec = QSort::createRandomVector(n);
+    ASSERT_ANY_THROW(QSort::qSort(&vec, -1, n));
 }
 
 TEST(QSort_Test, Test_Index_Overlap_Exception) {
     int n = 10;
-    std::vector<double> vec = createRandomVector(n);
-    ASSERT_ANY_THROW(qSort(&vec, n - 1, 0));
+    std::vector<double> vec = QSort::createRandomVector(n);
+    ASSERT_ANY_THROW(QSort::qSort(&vec, n - 1, 0));
 }
