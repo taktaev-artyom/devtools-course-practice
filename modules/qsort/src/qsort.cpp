@@ -2,9 +2,9 @@
 
 #include "include/qsort.h"
 
-#include <vector>
 #include <algorithm>
 #include <random>
+#include <vector>
 
 std::vector<double> QSort::createRandomVector(int vec_size) {
     if (vec_size <= 0) throw "Vector's size must be > 0.";
