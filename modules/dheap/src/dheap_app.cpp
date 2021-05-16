@@ -40,15 +40,16 @@ namespace DHeap {
             for (size_t i = 1; i < hilled_weights.size(); i++)
                 str << ' ' << hilled_weights[i];
         } catch (std::runtime_error& e) {
-            return "[ERROR] Base must be greater than 1 " + std::string(e.what());
+            return "[ERROR] Base must be greater than 1 " + 
+                   std::string(e.what());
         }
         if (retcode)
             *retcode = 0;
         return str.str();
     }
-    
+
     std::string DHeapApp::help(const std::string& filename) const {
         return "Usage: " + filename + " BASE WEIGHTS \nExample: " + filename +
            " 4 11 9 9 6 8 3 4 12 7";
     }
-} // namespace DHeapApp
+}  // namespace DHeap
