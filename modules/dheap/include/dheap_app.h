@@ -19,4 +19,4 @@ class DHeapApp {
 
 }  // namespace DHeap
 
-#endif // MODULES_DHEAP_INCLUDE_DHEAP_APP_H_
+#endif  // MODULES_DHEAP_INCLUDE_DHEAP_APP_H_
