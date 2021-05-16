@@ -48,7 +48,7 @@ namespace DHeap {
     }
     
     std::string DHeapApp::help(const std::string& filename) const {
-        return "Usage: " + filename + " BASE WEIGHTS\nExample: " + filename +
+        return "Usage: " + filename + " BASE WEIGHTS \nExample: " + filename +
            " 4 11 9 9 6 8 3 4 12 7";
     }
 } // namespace DHeapApp
