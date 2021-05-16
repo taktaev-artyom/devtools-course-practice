@@ -40,7 +40,7 @@ namespace DHeap {
             for (size_t i = 1; i < hilled_weights.size(); i++)
                 str << ' ' << hilled_weights[i];
         } catch (std::runtime_error& e) {
-            return "[ERROR] Base must be greater than 1 " + 
+            return "[ERROR] Base must be greater than 1 " +
                    std::string(e.what());
         }
         if (retcode)
