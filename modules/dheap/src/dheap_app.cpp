@@ -2,8 +2,8 @@
 
 #include "include/dheap_app.h"
 
-#include <stdexcept>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -12,9 +12,9 @@
 namespace DHeap {
     std::string DHeapApp::operator()(int argc, const char* argv[],
                                      int* retcode) const {
-        if (retcode)
+        if (retcode != nullptr)
             *retcode = 1;
-        if (argc <= 1)
+        if (argc < 2)
             return help(argv[0]);
         int base = std::stoi(argv[1]);
         std::vector<int> weights;
